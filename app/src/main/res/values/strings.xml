@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">SimpleCalculatorAwamo</string>
+    <string name="app_name">Simple Calculator</string>
+    <string name="number_one_text">Number One</string>
+    <string name="number_one_hint">Enter the first number</string>
+    <string name="number_two_text">Number Two</string>
+    <string name="operation_text">Operation</string>
+    <string name="number_two_hint">Enter the second number</string>
+    <string name="calculate_text">Calculate</string>
+    <string name="results_text">Results</string>
+    <string name="number_one_list_item_text">Number One: %1$d</string>
+    <string name="number_two_list_item_text">Number Two: %1$d</string>
+    <string name="response_list_item_text">Response: %1$d</string>
+    <string name="expected_list_item_text">Expected: %1$d</string>
+    <string name="passed_list_item_text">Expected: %1$s</string>
+    <string name="delete_result_button_content_description">delete result button</string>
 </resources>

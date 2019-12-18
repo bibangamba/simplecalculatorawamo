@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="4dp"
+        app:cardBackgroundColor="@color/colorAccentLight"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:id="@+id/numberOneTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/numberTwoTV"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Number One: 5" />
+
+        <TextView
+                android:id="@+id/numberTwoTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/responseTV"
+                app:layout_constraintEnd_toEndOf="@id/numberOneTV"
+                app:layout_constraintStart_toStartOf="@id/numberOneTV"
+                app:layout_constraintTop_toBottomOf="@id/numberOneTV"
+                tools:text="Number Two: 6" />
+
+        <TextView
+                android:id="@+id/responseTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/expectedTV"
+                app:layout_constraintEnd_toEndOf="@id/numberOneTV"
+                app:layout_constraintStart_toStartOf="@id/numberOneTV"
+                app:layout_constraintTop_toBottomOf="@id/numberTwoTV"
+                tools:text="Response: 11" />
+
+        <TextView
+                android:id="@+id/expectedTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/passedTV"
+                app:layout_constraintEnd_toEndOf="@id/numberOneTV"
+                app:layout_constraintStart_toStartOf="@id/numberOneTV"
+                app:layout_constraintTop_toBottomOf="@id/responseTV"
+                tools:text="Expected: 11" />
+
+        <TextView
+                android:id="@+id/passedTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="start"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/numberOneTV"
+                app:layout_constraintStart_toStartOf="@id/numberOneTV"
+                app:layout_constraintTop_toBottomOf="@id/expectedTV"
+                tools:text="Passed: Yes" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="340dp" />
+
+        <ImageView
+                android:id="@+id/deleteBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/delete_result_button_content_description"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/responseTV"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_delete_black_24dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
