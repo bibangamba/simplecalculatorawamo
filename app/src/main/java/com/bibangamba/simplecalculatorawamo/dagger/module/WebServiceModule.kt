@@ -41,8 +41,8 @@ class WebServiceModule(private val baseUrl: String) {
     }
 
     @Provides
-    fun providesSomeApiService(retrofit: Retrofit) {
-        retrofit.create(MathService::class.java)
+    fun providesSomeApiService(retrofit: Retrofit): MathService {
+        return retrofit.create(MathService::class.java)
     }
 
 }

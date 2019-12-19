@@ -9,8 +9,11 @@
     <string name="results_text">Results</string>
     <string name="number_one_list_item_text">Number One: %1$d</string>
     <string name="number_two_list_item_text">Number Two: %1$d</string>
-    <string name="response_list_item_text">Response: %1$d</string>
-    <string name="expected_list_item_text">Expected: %1$d</string>
-    <string name="passed_list_item_text">Expected: %1$s</string>
+    <string name="response_list_item_text">Response: %1$s</string>
+    <string name="expected_list_item_text">Expected: %1$s</string>
+    <string name="passed_list_item_text">Passed: %1$s</string>
     <string name="delete_result_button_content_description">delete result button</string>
+    <string name="enter_number_hint">Enter number</string>
+    <string name="no_calculation_results_yet">No calculation results yet</string>
+    <string name="option_one">sample action</string>
 </resources>

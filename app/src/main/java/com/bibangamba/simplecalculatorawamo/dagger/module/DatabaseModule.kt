@@ -11,6 +11,7 @@ import javax.inject.Singleton
 
 @Module
 class DatabaseModule(application: Application) {
+
     private val calculationDatabase = Room.databaseBuilder(
         application,
         CalculationDatabase::class.java,

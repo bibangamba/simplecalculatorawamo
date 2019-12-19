@@ -8,6 +8,7 @@ import androidx.paging.PagedList
 import com.bibangamba.simplecalculatorawamo.data.model.CalculationRequestLocalResult
 import com.bibangamba.simplecalculatorawamo.data.model.CalculationResult
 import com.bibangamba.simplecalculatorawamo.data.repository.CalculationRepository
+import com.bibangamba.simplecalculatorawamo.util.Constants.*
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 
@@ -15,10 +16,10 @@ class CalculationViewModel @Inject constructor(
     private val calculationRepository: CalculationRepository
 ) : ViewModel() {
 
-    private val mExpression = MutableLiveData<String>()
+    private val expression = MutableLiveData<String>()
 
     private val calculationRequestResults: LiveData<CalculationRequestLocalResult> =
-        Transformations.map(mExpression) {
+        Transformations.map(expression) {
             calculationRepository.getSavedCalculationResults(it)
         }
 
@@ -29,7 +30,7 @@ class CalculationViewModel @Inject constructor(
         Transformations.switchMap(calculationRequestResults) { it.networkError }
 
     private val _operationError = MutableLiveData<String>()
-    private val operationError: LiveData<String>
+    val operationError: LiveData<String>
         get() = _operationError
 
     val calculationError: LiveData<String> =
@@ -38,20 +39,27 @@ class CalculationViewModel @Inject constructor(
     val disposable: LiveData<CompositeDisposable> =
         Transformations.switchMap(calculationRequestResults) { it.disposable }
 
-    fun requestCalculation(firstNumber: Int, secondNumber: Int, operation: String) {
-        var symbol = ""
-        symbol = when (operation) {
-            "ADD" -> "+"
-            "SUBTRACT" -> "-"
-            "DIVIDE" -> "/"
-            "MULTIPLY" -> "*"
+    fun requestCalculation(firstNumber: String, secondNumber: String, operation: String) {
+        val symbol = when (operation) {
+            ADD -> ADD_SYMBOL
+            SUBTRACT -> SUBTRACT_SYMBOL
+            DIVIDE -> DIVIDE_SYMBOL
+            MULTIPLY -> MULTIPLY_SYMBOL
             else -> {
-                _operationError.postValue("invalid operation requested")
+                _operationError.postValue("Invalid operation requested in: $expression")
                 return
             }
 
         }
         val expression = "$firstNumber $symbol $secondNumber"
-        mExpression.postValue(expression)
+        this.expression.postValue(expression)
+    }
+
+    fun deleteResult(result: CalculationResult) {
+        calculationRepository.deleteResult(result)
+    }
+
+    fun getOldCalculationResults() {
+        this.expression.postValue("")
     }
 }

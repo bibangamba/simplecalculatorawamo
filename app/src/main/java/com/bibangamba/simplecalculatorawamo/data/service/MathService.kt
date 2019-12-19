@@ -1,8 +1,10 @@
 package com.bibangamba.simplecalculatorawamo.data.service
 
 import com.bibangamba.simplecalculatorawamo.data.model.CalculateNetworkResponse
+import com.bibangamba.simplecalculatorawamo.data.model.CalculationRequest
 import io.reactivex.Observable
-import retrofit2.http.Field
+import retrofit2.http.Body
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
 /**
@@ -17,7 +19,7 @@ interface MathService {
      */
     @POST("/v4")
     fun calculate(
-        @Field("expr") expression: String
+        @Body requestData: CalculationRequest
     ): Observable<CalculateNetworkResponse>
 
 }

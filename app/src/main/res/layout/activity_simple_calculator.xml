@@ -27,6 +27,7 @@
 
             <TextView
                     android:id="@+id/numberOneTV"
+                    style="@style/CustomTextViewStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
@@ -48,7 +49,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="4dp"
-                    android:hint="@string/number_one_hint"
+                    android:hint="@string/enter_number_hint"
                     android:importantForAutofill="no"
                     android:inputType="number"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -58,6 +59,7 @@
 
             <TextView
                     android:id="@+id/numberTwoTV"
+                    style="@style/CustomTextViewStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
@@ -79,7 +81,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="4dp"
-                    android:hint="@string/number_two_hint"
+                    android:hint="@string/enter_number_hint"
                     android:importantForAutofill="no"
                     android:inputType="number"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -89,6 +91,7 @@
 
             <TextView
                     android:id="@+id/operationTV"
+                    style="@style/CustomTextViewStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
@@ -144,7 +147,7 @@
             android:layout_marginBottom="8dp"
             app:cardBackgroundColor="@color/colorPrimary"
             app:cardCornerRadius="4dp"
-            app:layout_constraintBottom_toTopOf="@+id/resultsRecyclerView"
+            app:layout_constraintBottom_toTopOf="@+id/listGroup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calculatorCard">
@@ -161,11 +164,35 @@
             android:id="@+id/resultsRecyclerView"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/listGroup"
+            app:layout_constraintEnd_toEndOf="@id/listGroup"
+            app:layout_constraintStart_toStartOf="@id/listGroup"
+            app:layout_constraintTop_toTopOf="@id/listGroup"
+            tools:listitem="@layout/calculation_result_list_item" />
+
+    <TextView
+            android:id="@+id/emptyListTV"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="@string/no_calculation_results_yet"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="24sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/listGroup"
+            app:layout_constraintEnd_toEndOf="@id/listGroup"
+            app:layout_constraintStart_toStartOf="@id/listGroup"
+            app:layout_constraintTop_toTopOf="@id/listGroup" />
+
+    <androidx.constraintlayout.widget.Group
+            android:id="@+id/listGroup"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/resultsTitleCard"
-            tools:listitem="@layout/calculation_result_list_item" />
+            app:layout_constraintTop_toBottomOf="@+id/resultsTitleCard" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
