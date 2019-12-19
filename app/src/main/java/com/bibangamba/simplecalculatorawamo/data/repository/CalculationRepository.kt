@@ -61,7 +61,7 @@ class CalculationRepository @Inject constructor(
         return CalculationResult(firstNumber, secondNumber, response, expected)
     }
 
-    private fun getNumbersAndExpectedResult(expression: String): Triple<Int, Int, Double> {
+    fun getNumbersAndExpectedResult(expression: String): Triple<Int, Int, Double> {
         val expressionArray = expression.trim()
             .replace("\\s+".toRegex(), ",")
             .split(",")
@@ -73,7 +73,7 @@ class CalculationRepository @Inject constructor(
             ADD_SYMBOL -> (firstNumber + secondNumber).toDouble()
             SUBTRACT_SYMBOL -> (firstNumber - secondNumber).toDouble()
             MULTIPLY_SYMBOL -> (firstNumber * secondNumber).toDouble()
-            DIVIDE_SYMBOL -> return3FDouble(firstNumber, secondNumber)
+            DIVIDE_SYMBOL -> divide(firstNumber, secondNumber)
             else -> {
                 _calculationError.value = "Invalid operation symbol found in: $expression"
                 DEFAULT_RESULT
@@ -82,12 +82,12 @@ class CalculationRepository @Inject constructor(
         return Triple(firstNumber, secondNumber, expected)
     }
 
-    private fun return3FDouble(number1: Int, number2: Int): Double {
+    fun divide(number1: Int, number2: Int): Double {
         val double = number1.toDouble() / number2.toDouble()
         return return3FDouble(double)
     }
 
-    private fun return3FDouble(number: Double) =
+    fun return3FDouble(number: Double) =
         round(number * THREE_DECIMALS) / THREE_DECIMALS
 
 

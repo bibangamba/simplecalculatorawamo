@@ -46,6 +46,9 @@ dependencies {
     def cardview_version = "1.0.0"
     def material_version = "1.0.0"
     def paging_version = "2.1.0"
+    def espresso_version = "3.2.0"
+    def android_test = "1.2.0"
+    def mockito_version = "2.19.0"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -84,9 +87,15 @@ dependencies {
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
+    //testing
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation "androidx.test:core:$android_test"
+    androidTestImplementation "androidx.test:runner:$android_test"
+    androidTestImplementation "androidx.test:rules:$android_test"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espresso_version"
     testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation "org.mockito:mockito-inline:$mockito_version"
 
 }
