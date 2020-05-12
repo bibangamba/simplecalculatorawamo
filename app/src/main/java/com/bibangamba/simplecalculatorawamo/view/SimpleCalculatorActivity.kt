@@ -68,11 +68,16 @@ class SimpleCalculatorActivity : AppCompatActivity(), CalculationAdapter.OnDelet
     }
 
     private fun initUIScreen() {
+        calculatorViewModel.addOpText.value = getString(R.string.add)
+        calculatorViewModel.subtractOpText.value = getString(R.string.subtract)
+        calculatorViewModel.multiplyOpText.value = getString(R.string.multiply)
+        calculatorViewModel.divideOpText.value = getString(R.string.divide)
+
         calculateBtn.setOnClickListener {
             val firstNumber = numberOneET.text.toString()
             val secondNumber = numberTwoET.text.toString()
-            val symbol = operationSelect.selectedItem.toString()
-            calculatorViewModel.requestCalculation(firstNumber, secondNumber, symbol)
+            val operation = operationSelect.selectedItem.toString()
+            calculatorViewModel.requestCalculation(firstNumber, secondNumber, operation)
         }
     }
 

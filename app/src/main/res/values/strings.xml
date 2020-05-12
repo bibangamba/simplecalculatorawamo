@@ -16,4 +16,8 @@
     <string name="enter_number_hint">Enter number</string>
     <string name="no_calculation_results_yet">No calculation results yet</string>
     <string name="option_one">sample action</string>
+    <string name="add">Add</string>
+    <string name="subtract">Subtract</string>
+    <string name="multiply">Multiply</string>
+    <string name="divide">Divide</string>
 </resources>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="operations_array">
-        <item>Add</item>
-        <item>Subtract</item>
-        <item>Multiply</item>
-        <item>Divide</item>
+        <item>@string/add</item>
+        <item>@string/subtract</item>
+        <item>@string/multiply</item>
+        <item>@string/divide</item>
     </string-array>
 </resources>

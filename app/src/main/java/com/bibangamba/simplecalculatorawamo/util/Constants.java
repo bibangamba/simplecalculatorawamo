@@ -3,10 +3,6 @@ package com.bibangamba.simplecalculatorawamo.util;
 public class Constants {
     public static final String CALCULATION_DB_NAME = "calculation_results_database";
     public static final String BASE_URL = "http://api.mathjs.org/";
-    public static final String ADD = "Add";
-    public static final String SUBTRACT = "Subtract";
-    public static final String MULTIPLY = "Multiply";
-    public static final String DIVIDE = "Divide";
     public static final String ADD_SYMBOL = "+";
     public static final String SUBTRACT_SYMBOL = "-";
     public static final String MULTIPLY_SYMBOL = "*";

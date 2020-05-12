@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Calculatrice simple</string>
+    <string name="number_one_text">Premier numéro</string>
+    <string name="number_one_hint">Entrez le premier numéro</string>
+    <string name="number_two_text">Deuxième numéro</string>
+    <string name="number_two_hint">Entrez le deuxième numéro</string>
+    <string name="operation_text">Opération</string>
+    <string name="calculate_text">Calculer</string>
+    <string name="results_text">Résultats</string>
+    <string name="number_one_list_item_text">Premier numéro: %1$d</string>
+    <string name="number_two_list_item_text">Deuxième numéro: %1$d</string>
+    <string name="response_list_item_text">Résultats: %1$s</string>
+    <string name="expected_list_item_text">Attendu: %1$s</string>
+    <string name="passed_list_item_text">Réussi: %1$s</string>
+    <string name="delete_result_button_content_description">supprimer le bouton de résultat</string>
+    <string name="enter_number_hint">Entrer un nombre</string>
+    <string name="no_calculation_results_yet">Aucun résultat de calcul pour le moment</string>
+    <string name="option_one">exemple d\'action</string>
+    <string name="add">Ajouter</string>
+    <string name="subtract">Soustraire</string>
+    <string name="multiply">Multiplier</string>
+    <string name="divide">Diviser</string>
+</resources>

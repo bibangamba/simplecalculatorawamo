@@ -18,6 +18,11 @@ class CalculationViewModel @Inject constructor(
 
     private val expression = MutableLiveData<String>()
 
+    val addOpText = MutableLiveData<String>()
+    val subtractOpText = MutableLiveData<String>()
+    val multiplyOpText = MutableLiveData<String>()
+    val divideOpText = MutableLiveData<String>()
+
     private val calculationRequestResults: LiveData<CalculationRequestLocalResult> =
         Transformations.map(expression) {
             calculationRepository.getSavedCalculationResults(it)
@@ -41,10 +46,10 @@ class CalculationViewModel @Inject constructor(
 
     fun requestCalculation(firstNumber: String, secondNumber: String, operation: String) {
         val symbol = when (operation) {
-            ADD -> ADD_SYMBOL
-            SUBTRACT -> SUBTRACT_SYMBOL
-            DIVIDE -> DIVIDE_SYMBOL
-            MULTIPLY -> MULTIPLY_SYMBOL
+            addOpText.value -> ADD_SYMBOL
+            subtractOpText.value -> SUBTRACT_SYMBOL
+            multiplyOpText.value -> MULTIPLY_SYMBOL
+            divideOpText.value -> DIVIDE_SYMBOL
             else -> {
                 _operationError.postValue("Invalid operation requested in: $expression")
                 return
